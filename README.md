@@ -1,2 +1,2 @@
 # youngshop_component
-组件化demo
+组件化demo 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
