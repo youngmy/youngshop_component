@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="base_color_272F3E">#272F3E</color>
+    <color name="base_color_797D87">#797D87</color>
+    <color name="base_color_7D828B">#7D828B</color>
+    <color name="base_color_f">#ffffff</color>
+    <color name="base_color_000000">#000000</color>
+
+    <color name="base_color_black_3">#333333</color>
+
+
+    <color name="base_color_F5">#F5F5F5</color>
+    <color name="base_color_0">#000000</color>
+    <color name="base_color_3">#333333</color>
+    <color name="base_color_6">#666666</color>
+    <color name="base_color_9">#999999</color>
+</resources>

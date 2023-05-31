@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SplashActivity">
+
+
+
+        <Button
+            android:id="@+id/btn_show"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="显示通知"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/demoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="测试"
+            tools:ignore="HardcodedText" />
+
+        <com.young.view.RoundCornerLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:topCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:text="outline" />
+        </com.young.view.RoundCornerLayout>
+
+        <com.young.view.RoundCornerLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:bottomCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:text="outline" />
+        </com.young.view.RoundCornerLayout>
+
+        <com.young.view.RoundCornerLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/holo_blue_light"
+            app:bottomCornerRadius="10dp"
+            app:topCornerRadius="10dp">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:background="#ff0000"
+               android:orientation="vertical">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="80dp"
+
+                   android:gravity="center"
+                   android:text="outline" />
+
+           </LinearLayout>
+        </com.young.view.RoundCornerLayout>
+
+        <com.young.view.RoundCornerLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:bottomCornerRadiusLeft="0dp"
+            app:bottomCornerRadiusRight="10dp"
+            app:cornerMode="xfermode"
+            app:topCornerRadiusLeft="10dp"
+            app:topCornerRadiusRight="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:text="xfermode" />
+        </com.young.view.RoundCornerLayout>
+
+        <com.young.view.RoundCornerLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:bottomCornerRadiusLeft="0dp"
+            app:bottomCornerRadiusRight="10dp"
+            app:cornerMode="clip_path"
+            app:topCornerRadiusLeft="0dp"
+            app:topCornerRadiusRight="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:text="clippath" />
+        </com.young.view.RoundCornerLayout>
+
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:scaleType="fitXY"-->
+        <!--            android:src="@mipmap/welcome_android"-->
+        <!--            tools:ignore="ContentDescription" />-->
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

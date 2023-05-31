@@ -1,0 +1,115 @@
+{
+  "code": 1,
+  "msg": "请求成功。",
+  "data": [
+    {
+      "title": "顶部Banner",
+      "viewType": "top_banner",
+      "content": [
+        {
+          "title": "",
+          "imageUrl": "https://t7.baidu.com/it/u=27018761,936335273&fm=193&f=GIF",
+          "clickType": ""
+        },
+        {
+          "title": "",
+          "imageUrl": "https://t7.baidu.com/it/u=4264092703,2967343056&fm=193&f=GIF",
+          "clickType": ""
+        },
+        {
+          "title": "",
+          "imageUrl": "https://t7.baidu.com/it/u=4072290848,1500811730&fm=193&f=GIF",
+          "clickType": ""
+        },
+        {
+          "title": "中国乒乓",
+          "imageUrl": "https://t7.baidu.com/it/u=825057118,3516313570&fm=193&f=GIF",
+          "clickType": ""
+        }
+      ]
+    },
+    {
+      "title": "菜单",
+      "viewType": "btn_grid",
+      "content": [
+        {
+          "title": "淘宝",
+          "imageUrl": "icon_tao_bao",
+          "clickType": ""
+        },
+        {
+          "title": "京东",
+          "imageUrl": "icon_jing_dong",
+          "clickType": ""
+        },
+        {
+          "title": "拼多多",
+          "imageUrl": "icon_pin_duo_duo",
+          "clickType": ""
+        },
+        {
+          "title": "苏宁易购",
+          "imageUrl": "icon_su_ning_yi_gou",
+          "clickType": ""
+        },
+        {
+          "title": "唯品会",
+          "imageUrl": "icon_wei_pin_hui",
+          "clickType": ""
+        },
+        {
+          "title": "手机充值",
+          "imageUrl": "icon_mobile_phone_recharge",
+          "clickType": ""
+        },
+        {
+          "title": "通讯",
+          "imageUrl": "icon_communication",
+          "clickType": ""
+        },
+        {
+          "title": "外卖",
+          "imageUrl": "icon_take_out_food",
+          "clickType": ""
+        },
+        {
+          "title": "优惠加油",
+          "imageUrl": "icon_discount_oil",
+          "clickType": ""
+        },
+        {
+          "title": "新人免单",
+          "imageUrl": "icon_free_buy",
+          "clickType": ""
+        }
+      ],
+      "lineNumber": 5
+    },
+    {
+      "title": "Demo",
+      "viewType": "btn_grid",
+      "content": [
+        {
+          "title": "验证码",
+          "imageUrl": "icon_free_buy",
+          "clickType": "verification_code"
+        },
+        {
+          "title": "Kotlin测试",
+          "imageUrl": "icon_free_buy",
+          "clickType": "test_kotlin"
+        }
+      ],
+      "lineNumber": 5
+    },
+    {
+      "title": "Led",
+      "viewType": "horizontal_led",
+      "led": "六六三十六，数中有术，术中有数。阴阳燮理，机在其中。机不可设，设则不中。"
+    },
+    {
+      "title": "时间显示",
+      "viewType": "data_show"
+    }
+  ]
+}

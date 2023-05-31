@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.young.module.main.bean.MainBottomTabBean" />
+
+        <variable
+            name="imageUrl"
+            type="int" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/bottomLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+
+        <ImageView
+            android:id="@+id/iconImageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:local_image="@{imageUrl}"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:bind_selected="@{bean.selectState}"
+            android:textColor="@drawable/main_bottom_tab_text_color_selector"
+            tools:textColor="@color/base_color_black_3"
+            android:textSize="12sp"
+            android:text="@{bean.title}"
+            tools:text="title" />
+
+    </LinearLayout>
+</layout>

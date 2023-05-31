@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+//        google()
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+//        maven{ url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+//        google()
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+//        maven{ url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+    }
+}
+rootProject.name = "youngshop_component"
+include ':app'
+include ':login'
+include ':main'
+include ':home'
+include ':shop'
+include ':gift'
+include ':mine'
+include ':demo'
+include ':libBase'
+include ':commonConfig'
+

@@ -1,0 +1,32 @@
+{
+  "code": 1,
+  "msg": "请求成功。",
+  "data": [
+    {
+      "title": "顶部Banner",
+      "viewType": "top_banner",
+      "content": [
+        {
+          "title": "满江红",
+          "imageUrl": "https://wx4.sinaimg.cn/mw690/005QGbbsly1hadkdjmdcdj32x41uou0x.jpg",
+          "clickType": ""
+        },
+        {
+          "title": "流浪地球2",
+          "imageUrl": "https://img0.baidu.com/it/u=3964395355,452146897&fm=253&fmt=auto&app=138&f=JPEG?w=844&h=500",
+          "clickType": ""
+        },
+        {
+          "title": "狂飙",
+          "imageUrl": "https://ww1.sinaimg.cn/mw690/005zUEOFly1haf1dq717wg30zq0k0u1l.gif",
+          "clickType": ""
+        },
+        {
+          "title": "中国乒乓",
+          "imageUrl": "https://i0.hdslb.com/bfs/archive/f3c58fccb476f0909b105a216d30d934229a9ad2.jpg",
+          "clickType": ""
+        }
+      ]
+    }
+  ]
+}

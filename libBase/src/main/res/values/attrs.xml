@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!--身高标尺需用到多个属性-->
+    <declare-styleable name="MyRulerView">
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="lineColor" format="color" />
+        <attr name="lineSpaceWidth" format="dimension" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="lineMaxHeight" format="dimension" />
+        <attr name="lineMidHeight" format="dimension" />
+        <attr name="lineMinHeight" format="dimension" />
+        <attr name="textMarginTop" format="dimension" />
+        <attr name="minValue" format="float" />
+        <attr name="maxValue" format="float" />
+        <attr name="selectorValue" format="float" />
+        <attr name="perValue" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="ActionBarView">
+        <attr name="bar_title" format="string" />
+        <attr name="bar_title_size" format="dimension" />
+        <attr name="bar_title_color" format="color" />
+        <attr name="bar_right_icon" format="reference" />
+        <attr name="bar_right_text" format="string" />
+        <attr name="bar_right_color" format="color" />
+        <attr name="bar_right_icon_margin" format="dimension" />
+        <attr name="bar_right_width" format="dimension" />
+        <attr name="bar_right_height" format="dimension" />
+        <attr name="bar_left_icon" format="reference" />
+        <attr name="bar_left_width" format="dimension" />
+        <attr name="bar_left_height" format="dimension" />
+        <attr name="bar_left_icon_margin" format="dimension" />
+        <attr name="bar_left_hint" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundCornerLayout">
+        <attr name="topCornerRadius" format="dimension|reference" />
+        <attr name="topCornerRadiusLeft" format="dimension|reference" />
+        <attr name="topCornerRadiusRight" format="dimension|reference" />
+        <attr name="bottomCornerRadius" format="dimension|reference" />
+        <attr name="bottomCornerRadiusLeft" format="dimension|reference" />
+        <attr name="bottomCornerRadiusRight" format="dimension|reference" />
+        <attr name="cornerMode" format="string">
+            <!--支持同时设置四个圆角以及单独设置上圆角或者下圆角，但所有圆角弧度必须相同，不支持单独配置性能：绘制性能最优，暂未发现兼容和锯齿问题-->
+            <enum name="outline" value="0" />
+            <!--支持四个圆角单独设置和同时设置性能：性能稍差，同时抗锯齿效果比clippath会好一些-->
+            <enum name="xfermode" value="1" />
+            <!--支持四个圆角单独设置和同时设置，实现最灵活。性能：性能稍差，同时低版本机型锯齿明显，同时和硬件加速有兼容问题，部分机型存在渲染闪烁了切割黑屏-->
+            <enum name="clip_path" value="2" />
+            <!--outline的实现方式需要配置 topCornerRadius或者bottomCornerRadius即可,xfermode和clippath的实现方式则需要根据上下左右四个圆角分别配置-->
+        </attr>
+    </declare-styleable>
+
+</resources>
