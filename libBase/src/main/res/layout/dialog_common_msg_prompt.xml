@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_bg_f_5"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/base_color_3"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="温馨提示" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/contentTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="6"
+            android:lineSpacingExtra="4dp"
+            android:padding="10dp"
+            android:textColor="@color/base_color_3"
+            android:textSize="13sp"
+            tools:text="xxxxxxxx" />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/topLineView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_F5"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cancelTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/base_color_3"
+            android:textSize="13sp"
+            android:visibility="gone"
+            tools:text="取消"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/centerLineView"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_F5"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/confirmTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/main_color"
+            android:textSize="13sp"
+            android:visibility="gone"
+            tools:text="确定"
+            tools:visibility="visible" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

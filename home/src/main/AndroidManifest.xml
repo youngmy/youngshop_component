@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.young.module.home">
+
+    <!-- 文件读写权限  Android6.0 以后需要动态获取  10.0之后对文件的处理更复杂了 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+
+
 
     <application>
 <!--        <activity-->
 <!--            android:name=".LoginActivity"-->
 <!--            android:exported="true"/>-->
+
+        <activity android:name=".activity.GoodMusicActivity"/>
+        <activity android:name=".activity.LocalMusicActivity"/>
+   <service android:name="com.young.module.home.service.MusicService"
+       android:enabled="true"
+       android:exported="true"/>
+        <receiver android:name=".receiver.NotificationClickReceiver"/>
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360"/>
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640"/>
+
     </application>
 
 </manifest>

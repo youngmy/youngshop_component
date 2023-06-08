@@ -5,7 +5,6 @@ import io.reactivex.functions.Function;
 
 /**
  * 网络错误处理
- * @author llw
  */
 public class HttpErrorHandler<T> implements Function<Throwable, Observable<T>> {
 
@@ -19,4 +18,5 @@ public class HttpErrorHandler<T> implements Function<Throwable, Observable<T>> {
         //通过这个异常处理，得到用户可以知道的原因
         return Observable.error(ExceptionHandle.handleException(throwable));
     }
+
 }

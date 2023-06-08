@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * 基础返回类
- * @author llw
  */
 public class BaseResponse {
 
@@ -18,4 +17,6 @@ public class BaseResponse {
     @SerializedName("res_error")
     @Expose
     public String responseError;
+
 }
+

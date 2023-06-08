@@ -23,7 +23,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private var bottomTabDataList = ArrayList<MainBottomTabBean>()
     private var mAdapter: MainBottomTabAdapter? = null
 
-    private var getCurrentPosition = 0
+    private var getCurrentPosition = 2
 
     companion object {
         @SuppressLint("StaticFieldLeak")
@@ -39,7 +39,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun initView() {
         super.initView()
         mActivity = this
-        HeightDialog(this).show()
+//        HeightDialog(this).show()
     }
 
     override fun initData() {

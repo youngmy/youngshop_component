@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <com.young.view.SlidingIndicatorBar
+            android:id="@+id/slidingIndicatorBar"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            app:sib_bar_color="@color/main_color"
+            app:sib_bar_height="16dp"
+            app:sib_bending_height="64dp"
+            app:sib_bending_ratio="0"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <com.young.view.linearlayout.JavaExpandableLinearLayout-->
+<!--                android:id="@+id/javaExpandableLinearLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="芝麻粒儿" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="https://juejin.cn/user/4265760844943479" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="CSDN" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="https://zhima.blog.csdn.net/" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="Android/Unity技术" />-->
+<!--            </com.young.view.linearlayout.JavaExpandableLinearLayout>-->
+
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:background="@color/main_color" />-->
+
+<!--            <com.young.view.linearlayout.KotlinExpandableLinearLayout-->
+<!--                android:id="@+id/kotlinExpandableLinearLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="芝麻粒儿" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="https://juejin.cn/user/4265760844943479" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="CSDN" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="https://zhima.blog.csdn.net/" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="Android/Unity技术" />-->
+<!--            </com.young.view.linearlayout.KotlinExpandableLinearLayout>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.core.widget.NestedScrollView>-->
+
+</layout>

@@ -1,5 +1,4 @@
 package com.young.network.interceptor;
-
 import com.young.network.utils.KLog;
 
 import java.io.IOException;
@@ -9,8 +8,6 @@ import okhttp3.Response;
 
 /**
  * 返回拦截器(响应拦截器)
- *
- * @author llw
  */
 public class ResponseInterceptor implements Interceptor {
 
@@ -27,3 +24,4 @@ public class ResponseInterceptor implements Interceptor {
         return response;
     }
 }
+

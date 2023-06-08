@@ -32,6 +32,9 @@
             android:exported="true"/>
 
         <activity android:name=".ChangeLanguageActivity"/>
+        <activity android:name=".ExpandableLinearLayoutActivity"/>
+        <activity android:name=".DataStoreActivity"/>
+        <activity android:name=".StaggerdRecyclerViewActivity"/>
 
     </application>
 

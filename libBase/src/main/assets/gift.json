@@ -33,6 +33,11 @@
       "viewType": "btn_grid",
       "content": [
         {
+          "title": "本地音乐",
+          "imageUrl": "icon_tao_bao",
+          "clickType": "good_music"
+        },
+        {
           "title": "淘宝",
           "imageUrl": "icon_tao_bao",
           "clickType": ""
@@ -89,6 +94,11 @@
       "title": "Demo",
       "viewType": "btn_grid",
       "content": [
+        {
+          "title": "测试",
+          "imageUrl": "icon_free_buy",
+          "clickType": "demo"
+        },
         {
           "title": "验证码",
           "imageUrl": "icon_free_buy",

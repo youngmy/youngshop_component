@@ -7,4 +7,26 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="colorPrimary">#26252B</color>
+    <color name="colorPrimaryDark">#26252B</color>
+    <color name="colorAccent">#D81B60</color>
+
+<!--    &lt;!&ndash;App主要颜色&ndash;&gt;-->
+<!--    <color name="app_color">#26252B</color>-->
+<!--    &lt;!&ndash;App背景颜色&ndash;&gt;-->
+<!--    <color name="app_bg">#333439</color>-->
+
+<!--    <color name="white">#FFFFFF</color>-->
+<!--    <color name="white_2">#22FFFFFF</color>&lt;!&ndash;白色透明度22%&ndash;&gt;-->
+<!--    <color name="white_4">#44FFFFFF</color>&lt;!&ndash;白色透明度44%&ndash;&gt;-->
+<!--    <color name="white_6">#66FFFFFF</color>&lt;!&ndash;白色透明度66%&ndash;&gt;-->
+<!--    <color name="white_8">#88FFFFFF</color>&lt;!&ndash;白色透明度88%&ndash;&gt;-->
+<!--    <color name="transparent">#00000000</color>&lt;!&ndash;透明&ndash;&gt;-->
+
+    <color name="gold_color">#FF9D00</color>
+    <color name="bottom_bg_color">#1A191D</color>
+    <color name="goodMusicBg">#333439</color>
+    <color name="goodMusicMainColor">#26252B</color>
 </resources>

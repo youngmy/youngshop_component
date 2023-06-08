@@ -1,47 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/mineRefreshLayout"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/base_color_F5"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/shareWeChat"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:textColor="@color/main_color"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/rectangle_bg_f_5"
-            android:textSize="15sp"
-            android:gravity="center"
-            android:text="微信"
-            tools:ignore="HardcodedText" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/shareWeChatFriend"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:textColor="@color/main_color"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/rectangle_bg_f_5"
-            android:textSize="15sp"
-            android:gravity="center"
-            android:text="朋友圈"
-            tools:ignore="HardcodedText" />
+            <FrameLayout
+                android:id="@+id/mineFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/bgRootLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/mine_top_bg"
+                    android:orientation="horizontal" />
+
+                <com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout
+                    android:id="@+id/consecutiveScrollerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:isPermanent="true">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/headerLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <include android:id="@+id/floatingHeaderLayout" layout="@layout/layout_floating_header_layout" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                        <include layout="@layout/layout_mine_order" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/functionList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:tabMode="scrollable"
+                        app:tabIndicatorHeight="0dp"
+                        app:tabRippleColor="@color/transparent"
+                        app:tabTextColor="@color/base_color_40"
+                        app:tabSelectedTextColor="#E33A3C"
+                        app:tabBackground="@drawable/selector_tab_indicator"
+                        app:layout_isSticky="true"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recommendGoodsList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"/>
+
+                </com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>
+            </FrameLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/backTopView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/back_top"
+                android:visibility="gone"
+                app:backgroundTint="@color/white"
+                app:borderWidth="0dp"
+                app:elevation="10dp"
+                app:fabSize="mini"
+                app:rippleColor="@color/base_color_6"
+                tools:visibility="visible"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 </layout>

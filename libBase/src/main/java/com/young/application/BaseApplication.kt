@@ -9,13 +9,22 @@ import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.tencent.mmkv.MMKV
 import com.young.module.libbase.R
+import com.young.utils.ActivityManager
 import com.young.utils.MVUtils
+import me.jessyan.autosize.AutoSizeConfig
+import org.litepal.LitePal
 
-open class BaseApplication :Application(){
+open class BaseApplication : Application() {
 
     companion object {
+
+        lateinit var activityManager: ActivityManager
+
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
+
+        @SuppressLint("StaticFieldLeak")
+        lateinit var instance: BaseApplication
 
         //static 代码段可以防止内存泄露
         init {
@@ -33,14 +42,33 @@ open class BaseApplication :Application(){
 
     override fun onCreate() {
         super.onCreate()
+        //声明Activity管理
+        activityManager = ActivityManager()
         context = applicationContext
+        instance = this
         //MMKV初始化
-        val initialize= MMKV.initialize(this)
-        YLogHelper.i("BaseApplication===","MMKV INIT $initialize")
+        val initialize = MMKV.initialize(this)
+        YLogHelper.i("BaseApplication===", "MMKV INIT $initialize")
         //工具类初始化
         MVUtils.getInstance()
+        LitePal.initialize(this)
+        AutoSizeConfig.getInstance().setCustomFragment(true);
+    }
 
+    open fun getActivityManager(): ActivityManager? {
+        return activityManager
+    }
 
+    /**
+     * 内容提供器
+     * @return
+     */
+    open fun getContext(): Context? {
+        return context
+    }
+
+    open fun getApplication(): BaseApplication? {
+        return instance
     }
 
 }

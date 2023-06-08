@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.gyf.immersionbar.ImmersionBar
 import com.helper.YLogHelper
 import com.young.base.fragment.BaseFragment
 import com.young.commonconfig.helper.homeRootFragment
@@ -13,17 +14,24 @@ import com.young.module.home.R
 import com.young.module.home.databinding.ActivityHomeBinding
 import com.young.utils.JsonHelper
 import com.young.utils.MVUtils
+import com.young.utils.MyStatusBarUtil
 import com.young.widget.bean.WidgetBean
 import com.young.widget.bean.WidgetMultipleItem
 import com.young.widget.utils.WidgetConvertHelper
 import com.young.widget.utils.WidgetDataHelper
+import me.jessyan.autosize.internal.CustomAdapt
 
 
 @Route(path = homeRootFragment)
-class HomeRootFragment:BaseFragment<ActivityHomeBinding>(R.layout.activity_home) {
+class HomeRootFragment:BaseFragment<ActivityHomeBinding>(R.layout.activity_home), CustomAdapt {
 
     private var mAdapter: HomeAdapter? = null
     private var dataList = ArrayList<WidgetMultipleItem>()
+
+    override fun initView() {
+        super.initView()
+        initStatusHeight()
+    }
 
     override fun initData() {
         initAdapter()
@@ -35,6 +43,32 @@ class HomeRootFragment:BaseFragment<ActivityHomeBinding>(R.layout.activity_home)
         val age = MVUtils.getInt("age", 0)
         YLogHelper.i("HomeRootFragment===", "取 ：age===$age")
 
+    }
+
+    private fun initStatusHeight(){
+        mBinding.topLineView.setPadding(0, MyStatusBarUtil.getHeight(), 0, 0)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        ImmersionBar
+            .with(this)
+            .statusBarView(mBinding.topLineView)
+            .transparentStatusBar()//透明状态栏，不写默认透明色
+            .statusBarDarkFont(true)//状态栏字体是深色，不写默认为亮色
+            .init()
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        if(!hidden) {
+            ImmersionBar
+                .with(this)
+                .statusBarView(mBinding.topLineView)
+                .transparentStatusBar()//透明状态栏，不写默认透明色
+                .statusBarDarkFont(true)//状态栏字体是深色，不写默认为亮色
+                .init()
+        }
     }
 
     private fun initAdapter() {
@@ -92,6 +126,14 @@ class HomeRootFragment:BaseFragment<ActivityHomeBinding>(R.layout.activity_home)
         override fun convert(holder: BaseViewHolder, item: WidgetMultipleItem) {
             WidgetConvertHelper.convert(mBaseActivity(),holder, item)
         }
+    }
+
+    override fun isBaseOnWidth(): Boolean {
+       return false
+    }
+
+    override fun getSizeInDp(): Float {
+        return 750F
     }
 
 }

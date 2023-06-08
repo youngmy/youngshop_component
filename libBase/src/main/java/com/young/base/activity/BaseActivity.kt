@@ -1,5 +1,8 @@
 package com.young.base.activity
 
+import android.annotation.SuppressLint
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,12 +14,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.young.application.BaseApplication
+import java.lang.reflect.Field
 
 abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId: Int = 0) :
     AppCompatActivity(layoutId) {
 
     fun mBaseActivity() = mBaseActivity!!
-    private var mBaseActivity: BaseActivity<VB>? = null
+    private var mBaseActivity: AppCompatActivity? = null
 
 //    private var mActionBarView: ActionBarView? = null
     private var mLayoutError: LinearLayout? = null
@@ -26,7 +31,10 @@ abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId: Int = 0) 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTransparentStatusBar()
         mBaseActivity = this
+        //添加继承这个BaseActivity的Activity
+        BaseApplication.activityManager.addActivity(this)
         try {
             //默认状态栏为白底黑字
 //            darkMode(BaseConfig.statusBarDarkMode)
@@ -208,6 +216,43 @@ abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId: Int = 0) 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(containerId, toFragment)
         transaction.commit()
+    }
+
+    @SuppressLint("PrivateApi")
+    private fun setTransparentStatusBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            try {
+                val decorViewClazz = Class.forName("com.android.internal.policy.DecorView")
+                val field: Field = decorViewClazz.getDeclaredField("mSemiTransparentStatusBarColor")
+                field.isAccessible = true
+                field.setInt(window.decorView, Color.TRANSPARENT) //设置透明
+            } catch (e: Exception) {
+            }
+        }
+    }
+
+    /**
+     * 快速点击的时间间隔
+     */
+    private val fastClickDelayTime = 500
+
+    /**
+     * 最后点击的时间
+     */
+    private var lastClickTime: Long = 0
+    /**
+     * 两次点击间隔不能少于500ms  防止多次点击
+     *
+     * @return flag
+     */
+     open fun isFastClick(): Boolean {
+        var flag = true
+        val currentClickTime = System.currentTimeMillis()
+        if (currentClickTime - lastClickTime >= fastClickDelayTime) {
+            flag = false
+        }
+        lastClickTime = currentClickTime
+        return flag
     }
 
 }

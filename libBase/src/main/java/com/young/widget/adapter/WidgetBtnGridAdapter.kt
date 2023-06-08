@@ -13,7 +13,7 @@ class WidgetBtnGridAdapter(data: MutableList<CommonClickBean>) :
     override fun convert(holder: BaseViewHolder, item: CommonClickBean) {
 
         val iconImageView = holder.getView<ImageView>(R.id.iconImageView)
-//        GlideHelper.loadImage(mContext,iconImageView,bean.img)
+//        GlideHelper.loadImage(context,iconImageView,bean.img)
         iconImageView.setImageResource(ImageViewHelper.getImageViewId(item.imageUrl))
         holder.setText(R.id.titleTextView,item.title)
 

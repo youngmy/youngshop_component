@@ -1,22 +1,23 @@
 package com.young.network.errorhandler;
 
+import android.net.ParseException;
+
 import com.google.gson.JsonParseException;
 
 import org.apache.http.conn.ConnectTimeoutException;
 import org.json.JSONException;
 
 import java.net.ConnectException;
-import java.text.ParseException;
 
 import retrofit2.HttpException;
 
 /**
  * 异常处理
- * @author llw
  */
 public class ExceptionHandle {
+
     //未授权
-    private static final int UNAUTHORIZED = 401;
+     private static final int UNAUTHORIZED = 401;
     //禁止的
     private static final int FORBIDDEN = 403;
     //未找到
@@ -34,6 +35,7 @@ public class ExceptionHandle {
 
     /**
      * 处理异常
+     *
      * @param throwable
      * @return
      */
@@ -45,29 +47,13 @@ public class ExceptionHandle {
             responseThrowable = new ResponseThrowable(throwable, ERROR.HTTP_ERROR);
             switch (httpException.code()) {
                 case UNAUTHORIZED:
-                    responseThrowable.message = "未授权";
-                    break;
                 case FORBIDDEN:
-                    responseThrowable.message = "禁止访问";
-                    break;
                 case NOT_FOUND:
-                    responseThrowable.message = "未找到";
-                    break;
                 case REQUEST_TIMEOUT:
-                    responseThrowable.message = "请求超时";
-                    break;
                 case GATEWAY_TIMEOUT:
-                    responseThrowable.message = "网关超时";
-                    break;
                 case INTERNAL_SERVER_ERROR:
-                    responseThrowable.message = "内部服务器错误";
-                    break;
                 case BAD_GATEWAY:
-                    responseThrowable.message = "错误网关";
-                    break;
                 case SERVICE_UNAVAILABLE:
-                    responseThrowable.message = "暂停服务";
-                    break;
                 default:
                     responseThrowable.message = "网络错误";
                     break;
@@ -93,7 +79,7 @@ public class ExceptionHandle {
             responseThrowable = new ResponseThrowable(throwable, ERROR.SSL_ERROR);
             responseThrowable.message = "证书验证失败";
             return responseThrowable;
-        } else if (throwable instanceof ConnectTimeoutException){
+        } else if (throwable instanceof ConnectTimeoutException) {
             responseThrowable = new ResponseThrowable(throwable, ERROR.TIMEOUT_ERROR);
             responseThrowable.message = "连接超时";
             return responseThrowable;
@@ -101,8 +87,7 @@ public class ExceptionHandle {
             responseThrowable = new ResponseThrowable(throwable, ERROR.TIMEOUT_ERROR);
             responseThrowable.message = "连接超时";
             return responseThrowable;
-        }
-        else {
+        } else {
             responseThrowable = new ResponseThrowable(throwable, ERROR.UNKNOWN);
             responseThrowable.message = "未知错误";
             return responseThrowable;
@@ -143,6 +128,7 @@ public class ExceptionHandle {
     }
 
     public static class ResponseThrowable extends Exception {
+
         public int code;
         public String message;
 

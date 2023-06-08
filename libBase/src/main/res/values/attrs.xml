@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
+
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="civ_border_width"/>
+        <attr format="color" name="civ_border_color"/>
+        <attr format="boolean" name="civ_border_overlay"/>
+        <attr format="color" name="civ_circle_background_color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ConsecutiveScrollerLayout_Layout">
+        <attr name="layout_isConsecutive" format="boolean" />
+        <attr name="layout_isNestedScroll" format="boolean" />
+        <attr name="layout_isSticky" format="boolean" />
+        <attr name="layout_isTriggerScroll" format="boolean" />
+        <attr name="layout_isSink" format="boolean" />
+        <attr name="layout_align" format="enum">
+            <enum name="LEFT" value="1" />
+            <enum name="RIGHT" value="2" />
+            <enum name="CENTER" value="3" />
+        </attr>
+        <attr name="layout_scrollChild" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="ConsecutiveScrollerLayout">
+        <attr name="isPermanent" format="boolean" />
+        <attr name="stickyOffset" format="dimension" />
+        <attr name="autoAdjustHeightAtBottomView" format="boolean" />
+        <attr name="adjustHeightOffset" format="dimension" />
+        <attr name="disableChildHorizontalScroll" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SlidingIndicatorBar">
+        <attr name="sib_bar_height" format="dimension|reference"/>
+        <attr name="sib_bar_color" format="color|reference"/>
+        <attr name="sib_bending_height" format="dimension|reference"/>
+        <attr name="sib_bending_ratio" format="float"/>
+    </declare-styleable>
+
     <!--身高标尺需用到多个属性-->
     <declare-styleable name="MyRulerView">
         <attr name="textColor" format="color" />
